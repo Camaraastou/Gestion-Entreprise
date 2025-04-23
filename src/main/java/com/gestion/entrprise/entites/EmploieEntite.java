@@ -1,7 +1,6 @@
 package com.gestion.entrprise.entites;
 
 
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -56,12 +55,11 @@ public class EmploieEntite {
 	
 	
 	@ManyToOne
-    @JoinColumn(name = "direction_id", nullable = false)
+    @JoinColumn(name = "idDirection", nullable = false)
     private DirectionEntite directionEntite;
 	
 	
-
-
+	
 
 
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://jakarta.faces/html"
+      xmlns:f="http://jakarta.faces/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Formulaire Employé</title>
+</h:head>
+<h:body>
+
+    <h:form>
+        <p:panel header="Formulaire Employé" style="max-width: 600px; margin: auto;">
+            <h:panelGrid columns="2" cellpadding="10">
+
+                <h:outputLabel for="nom" value="Nom :" />
+                <p:inputText id="nom" value="#{emploieBean.emploie.nom}" required="true" />
+
+                <h:outputLabel for="prenom" value="Prénom :" />
+                <p:inputText id="prenom" value="#{emploieBean.emploie.prenom}" required="true" />
+
+                <h:outputLabel for="adresse" value="Adresse :" />
+                <p:inputTextarea id="adresse" value="#{emploieBean.emploie.adresse}" autoResize="true" rows="2" />
+
+                <h:outputLabel for="telephone" value="Téléphone :" />
+                <p:inputMask id="telephone" mask="9999-999-999" value="#{emploieBean.emploie.telephone}" />
+
+                <h:outputLabel for="email" value="Email :" />
+                <p:inputText id="email" value="#{emploieBean.emploie.email}" />
+
+                <h:outputLabel for="fonction" value="Fonction :" />
+                <p:inputText id="fonction" value="#{emploieBean.emploie.fonction}" />
+
+                <h:outputLabel for="dateEntree" value="Date d'entrée :" />
+                <p:datePicker id="dateEntree" value="#{emploieBean.emploie.dateEntree}" pattern="yyyy-MM-dd" />
+
+                <h:outputLabel for="salaire" value="Salaire Annuel (€) :" />
+                <p:inputNumber id="salaire" value="#{emploieBean.emploie.salaireAnnuel}" symbol="€" />
+
+            </h:panelGrid>
+
+            <p:separator />
+
+            <p:commandButton value="Enregistrer"
+                             action="#{emploieBean.save}"
+                             update="@form"
+                             style="margin-right:10px;" />
+            <p:commandButton value="Réinitialiser"
+                             type="reset"
+                             styleClass="ui-button-secondary" />
+
+        </p:panel>
+    </h:form>
+
+</h:body>
+</html>

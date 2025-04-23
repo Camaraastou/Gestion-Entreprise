@@ -3,7 +3,6 @@ package com.gestion.entrprise.entites;
 
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,8 +38,11 @@ public class DirectionEntite {
 	    @JoinColumn(name = "entreprise_id", nullable = false)
 	    private EntrepriseEntite entreprise;
 
-	    @OneToMany(mappedBy = "direction", cascade = CascadeType.ALL)
+	   
+	    
+	    @OneToMany(mappedBy = "direction")
 	    private List<EmploieEntite> employes;
+	    
 
 
 
